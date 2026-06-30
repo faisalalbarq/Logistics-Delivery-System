@@ -3,7 +3,7 @@ package mzn.faisal.logisticsDeliverySystem.Classes;
 public abstract class Vehicle {
 
     protected String vehicleId;
-    private double baseTripCost;
+    private final double baseTripCost;
     protected double fuelLevel;
 
     public Vehicle(String vehicleId, double baseTripCost, double fuelLevel) {
@@ -14,7 +14,7 @@ public abstract class Vehicle {
 
     public abstract double calculateDeliveryCost(double distance, double weight);
 
-    protected double getBaseTripCost() {
-        return baseTripCost;
-    }
+    protected double getBaseTripCost() {return baseTripCost;}
+    public String getVehicleId()       {return vehicleId;}
+    public double getFuelLevel()       {return fuelLevel;}
 }
